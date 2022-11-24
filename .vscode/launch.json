@@ -5,6 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.example.java.Main",
+            "projectName": "Here I Am_ac2f3da8"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Here I Am_ac2f3da8"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Java.Main",
+            "projectName": "Here I Am_ac2f3da8"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
