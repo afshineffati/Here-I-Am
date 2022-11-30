@@ -1,33 +1,46 @@
-import tkinter
-import tkinter.messagebox
+import json
 
-root = tkinter.Tk()
-root.title("To-Do List")
+data = {}
 
-def add_task():
-    task = entry_task.get()
-    if task != "":
-        listbox_tasks.insert(tkinter.END, task)
-        entry_task.delete(0, tkinter.END)
-
-# Create GUI
-frame_tasks = tkinter.Frame(root)
-frame_tasks.pack()
-
-listbox_tasks = tkinter.Listbox(frame_tasks, height=3, width=50)
-listbox_tasks.pack(side=tkinter.LEFT)
-
-scrollbar_tasks = tkinter.Scrollbar(frame_tasks)
-scrollbar_tasks.pack(side=tkinter.RIGHT, fill=tkinter.Y)
-
-listbox_tasks.config(yscrollcommand=scrollbar_tasks.set)
-scrollbar_tasks.config(command=listbox_tasks.yview)
-
-entry_task = tkinter.Entry(root, width=50)
-entry_task.pack()
-
-button_add_task = tkinter.Button(root, text="Add", width=48, command=add_task)
-button_add_task.pack()
+# class Task:
+#     type = "todo"
+#     def __init__(self, title, priority, date):
+#         self.title = title
+#         self.priority = priority
+#         self.date = date
 
 
-root.mainloop()
+# def save():
+#     with open("data.json", 'w') as datafile:
+#         json.dump(todo_list, datafile)
+
+
+def new_list(name):
+    with open('data.json', mode='wt', encoding='utf-8') as df:
+        data[name] = {}
+        json.dump(data, df)
+
+
+# def add_task(title, priority):
+#     from datetime import date
+#     todo_list = Task(title, priority, date.today())
+
+
+# def show_all():
+#     for i in todo_list:
+#         print(f'\nTitle: {i.title}')
+#         print(f'Priority: {i.priority}')
+#         print(f'Create: {i.date}\n')
+
+
+def main():
+    new_list("todo list")
+    # new_list("todo_list")
+    # add_task("book dr appointment", "high")
+    # add_task("send tax bill", "low") 
+    # show_all()
+    # save()
+
+
+if __name__ == '__main__':
+    main()
